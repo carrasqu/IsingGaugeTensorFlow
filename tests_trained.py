@@ -170,6 +170,7 @@ print "test accuracy %g"%sess.run(accuracy, feed_dict={
 
 
 # output  neuron over the test set
+
 f = open('nnout.dat', 'w')
 
 Ntemp=2
@@ -187,7 +188,7 @@ for i in range(Ntemp):
   f.write(str(i)+' '+str(av[0,0])+' '+str(av[0,1])+"\n")
 f.close()
 
-# accuracy vs "temperature"
+# accuracy vs "temperature" on the test set
 f = open('acc.dat', 'w')
 
 # accuracy vs temperature
@@ -199,7 +200,7 @@ for ii in range(Ntemp):
 f.close()
 
 
-#plotting a ground state configuration
+#plotting a ground state configuration (disable for runs) 
 #ii=0
 #batch=(mnist.test.images[ii,:].reshape((1,2*(lx+1)*(lx+1))),mnist.test.labels[ii,:].reshape((1,numberlabels)))
 
