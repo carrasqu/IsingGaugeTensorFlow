@@ -120,9 +120,9 @@ nmaps2=2
 
 # This is the fully connected weight matrix
 Wlast=np.ones(((lx) * (lx) * nmaps1,nmaps2)) # all ones at the begining
-Wlast[8*lx*lx:,0]=-(lx*lx-lx+1) # # for the ground state neuron (0), if a single violated plaquette appears, then we get negative values before the perceptron
+Wlast[8*lx*lx:,0]=-(lx*lx) # # for the ground state neuron (0), if a single violated plaquette appears, then we get negative values before the perceptron
 Wlast[0:8*lx*lx,1]=-1   # for the high temperature neuron(1), we take negative values of satisfied plaquettes 
-Wlast[8*lx*lx:,1]=lx*lx-lx+1 # for the negative neuron (1), if a single vortex plaquette is present, we should consider the state high temperature  and the values should be positive before the precentrop
+Wlast[8*lx*lx:,1]=lx*lx # for the negative neuron (1), if a single vortex plaquette is present, we should consider the state high temperature  and the values should be positive before the precentrop
 
 bf=np.zeros(nmaps2) # bias is chosen to be zero in this case
 # transforming to tensorflow variables
